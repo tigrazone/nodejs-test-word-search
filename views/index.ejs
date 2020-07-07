@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+	<form method="post">Word for search <input type="text" name="word" required <% if(word) { %> value="<%= word %>" <% } %>>
+		<p><input type="submit"></p>
+	</form>
+	<% if(searched) {if(words.length) { %>
+	<p>words found: <%= words.length %></p>
+	<ul>	
+            <% for(var i=0; i<words.length;i++) {%>
+                <li><%= words[i]['line'] %>: <%= words[i]['data'] %></li>
+            <%} %>
+	</ul>
+	<% } else { %>CANT FIND<% }} %>
+  </body>
+</html>
